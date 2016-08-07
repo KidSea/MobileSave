@@ -4,16 +4,25 @@
     android:layout_height="match_parent"
     android:background="@drawable/launcher_bg"
     android:orientation="vertical" >
-    
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="版本号 1.0" 
-        android:textColor="#000"
-        android:textSize="18sp"
         android:layout_marginBottom="20dp"
-        />
- 
+        android:text="版本号 1.0"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="107dp" />
+
 </RelativeLayout>
