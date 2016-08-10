@@ -5,7 +5,10 @@ import java.io.File;
 import org.json.JSONObject;
 
 import com.example.mobilesavety.R;
+import com.example.mobilesavety.utils.ConstantValue;
 import com.example.mobilesavety.utils.PackageUtils;
+import com.example.mobilesavety.utils.SpUtils;
+
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
@@ -21,6 +24,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.TextView;
@@ -34,11 +38,36 @@ import android.widget.Toast;
  */
 public class SplashActivity extends Activity {
 
+	
+	/**
+	 * 更新新版本的状态码
+	 */
+	protected static final int UPDATE_VERSION = 100;
+	/**
+	 * 进入应用程序主界面状态码
+	 */
+	protected static final int ENTER_HOME = 101;
+	
 	private TextView mTvVersion;
 	private int mLocalVersionCode;
 	private String mDownLoadUrl;
 	private String mDesc;
-
+	private Handler mHandler = new Handler(){
+		@Override
+		//alt+ctrl+向下箭头,向下拷贝相同代码
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case UPDATE_VERSION:
+				//弹出对话框,提示用户更新
+				showDialog();
+				break;
+			case ENTER_HOME:
+				//进入应用程序主界面,activity跳转过程
+				loadMainUI();
+				break;
+			}
+		}
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -60,8 +89,20 @@ public class SplashActivity extends Activity {
 	}
 
 	private void initDate() {
-		// 检查版本号
-		checkVerSion();
+		// 先获取缓存
+		boolean isCheck = SpUtils.getBoolean(getApplicationContext(),
+				ConstantValue.OPEN_UPDATE, false);
+		if (isCheck) {
+			// 检查版本号
+			checkVerSion();
+		} else {
+			//直接进入应用程序主界面
+//			enterHome();
+			//消息机制
+//			mHandler.sendMessageDelayed(msg, 4000);
+			//在发送消息4秒后去处理,ENTER_HOME状态码指向的消息
+			mHandler.sendEmptyMessageDelayed(ENTER_HOME, 4000);
+		}
 	}
 
 	/**
@@ -223,18 +264,20 @@ public class SplashActivity extends Activity {
 		// 第一个参数:URL，第二个参数：类型
 		intent.setDataAndType(Uri.fromFile(new File(string)),
 				"application/vnd.android.package-archive");
-		//直接启动安装时，点击取消，会卡死
-		//使用下面方式启动,界面消失后会回调onActivityResult()方法
+		// 直接启动安装时，点击取消，会卡死
+		// 使用下面方式启动,界面消失后会回调onActivityResult()方法
 		startActivityForResult(intent, 0);
 	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		System.out.println("onActivityResult()方法被调用了");
-		//当安装界面被取消后，返回当前界面，并进入主界面
+		// 当安装界面被取消后，返回当前界面，并进入主界面
 		loadMainUI();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
+
 	protected void loadMainUI() {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(this, HomeActivity.class);

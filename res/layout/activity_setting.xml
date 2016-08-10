@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="设置中心" />
+
+    <com.example.mobilesavety.view.SettingItemView
+        xmlns:mobilesavety="http://schemas.android.com/apk/res/com.example.mobilesavety"
+        android:id="@+id/siv_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesavety:desoff="自动更新已关闭"
+        mobilesavety:deson="自动更新已开启"
+        mobilesavety:destitle="自动更新设置" >
+    </com.example.mobilesavety.view.SettingItemView>
+       <com.example.mobilesavety.view.SettingItemView
+        xmlns:mobilesavety="http://schemas.android.com/apk/res/com.example.mobilesavety"
+        android:id="@+id/siv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesavety:desoff="电话归属地显示关闭"
+        mobilesavety:deson="电话归属地显示开启"
+        mobilesavety:destitle="电话归属地显示设置" >
+    </com.example.mobilesavety.view.SettingItemView>
+
+</LinearLayout>
