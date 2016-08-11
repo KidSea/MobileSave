@@ -202,7 +202,11 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 					
 					if(psd.equals(Md5Util.encoder(confirmPsd))){
 						//进入应用手机防盗模块,开启一个新的activity
-						ToastUtil.show(getApplicationContext(),"密码验证成功");
+						//ToastUtil.show(getApplicationContext(),"密码验证成功");
+						Intent intent = new Intent(getApplicationContext(),SetupOverActivity.class);
+						startActivity(intent);
+						//跳转到新的界面以后需要去隐藏对话框
+						dialog.dismiss();
 					}else{
 						ToastUtil.show(getApplicationContext(),"确认密码错误");
 					}
@@ -256,8 +260,11 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 				if (!TextUtils.isEmpty(psd) && !TextUtils.isEmpty(confirmPsd)) {
 					if (psd.equals(confirmPsd)) {
 						//密码一致，进入防盗引导页
-						ToastUtil.show(getApplicationContext(), "进入防盗引导页");
-						
+						//ToastUtil.show(getApplicationContext(), "进入防盗引导页");
+						Intent intent = new Intent(getApplicationContext(),SetupOverActivity.class);
+						startActivity(intent);
+						//跳转到新的界面以后需要去隐藏对话框
+						dialog.dismiss();
 						SpUtils.putString(getApplicationContext(), 
 								ConstantValue.MOBILE_SAFE_PSD, Md5Util.encoder(confirmPsd));
 					}else{

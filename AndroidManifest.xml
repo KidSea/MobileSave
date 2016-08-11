@@ -77,6 +77,11 @@
             </intent-filter>
         </activity>
          <activity android:name="com.example.mobilesavety.activity.SettingActivity" />
+         <activity android:name="com.example.mobilesavety.activity.SetupOverActivity" />
+         <activity android:name="com.example.mobilesavety.activity.SetupOneActivity" />
+         <activity android:name="com.example.mobilesavety.activity.SetupTwoActivity" />
+         <activity android:name="com.example.mobilesavety.activity.SetupThreeActivity" />
+         <activity android:name="com.example.mobilesavety.activity.SetupFourActivity" />
     </application>
 
 </manifest>

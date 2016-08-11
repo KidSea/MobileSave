@@ -1,12 +1,14 @@
 package com.example.mobilesavety.view;
 
+import com.example.mobilesavety.R;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.mobilesavety.R;
+
 
 
 public class SettingClickView extends RelativeLayout {
