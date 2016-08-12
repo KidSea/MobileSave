@@ -15,7 +15,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class SetupTwoActivity extends Activity {
+public class SetupTwoActivity extends BaseSetupActivity{
 
 	private SettingItemView siv_sim_bound;
 
@@ -71,7 +71,9 @@ public class SetupTwoActivity extends Activity {
 
 	}
 
-	public void nextPage(View view) {
+	@Override
+	protected void showNextPage() {
+		// TODO Auto-generated method stub
 		String serialNumber = SpUtils.getString(this, ConstantValue.SIM_NUMBER,
 				"");
 		if (!TextUtils.isEmpty(serialNumber)) {
@@ -89,8 +91,9 @@ public class SetupTwoActivity extends Activity {
 
 	}
 
-	public void prePage(View view) {
-		// 空
+	@Override
+	protected void showPrePage() {
+		// TODO Auto-generated method stub
 		// 跳转到上一个页面
 		Intent intent = new Intent(getApplicationContext(),
 				SetupOneActivity.class);

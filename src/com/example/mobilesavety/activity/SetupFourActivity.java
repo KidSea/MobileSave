@@ -13,7 +13,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class SetupFourActivity extends Activity {
+public class SetupFourActivity extends BaseSetupActivity {
 
 	private CheckBox checkBox;
 
@@ -39,7 +39,7 @@ public class SetupFourActivity extends Activity {
 		} else {
 			checkBox.setText("安全设置已关闭");
 		}
-		checkBox.setChecked(!checkBox.isChecked());
+		//checkBox.setChecked(!checkBox.isChecked());
 		// 3,点击过程中,监听选中状态发生改变过程,
 		checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
@@ -58,7 +58,10 @@ public class SetupFourActivity extends Activity {
 		});
 	}
 
-	public void nextPage(View view) {
+
+	@Override
+	protected void showNextPage() {
+		// TODO Auto-generated method stub
 		boolean open_security = SpUtils.getBoolean(getApplicationContext(),
 				ConstantValue.OPEN_SECURITY, false);
 		if (open_security) {
@@ -79,8 +82,9 @@ public class SetupFourActivity extends Activity {
 
 	}
 
-	public void prePage(View view) {
-		// 空
+	@Override
+	protected void showPrePage() {
+		// TODO Auto-generated method stub
 		// 跳转到上一个页面
 		Intent intent = new Intent(getApplicationContext(),
 				SetupThreeActivity.class);

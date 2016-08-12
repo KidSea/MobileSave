@@ -82,6 +82,7 @@
          <activity android:name="com.example.mobilesavety.activity.SetupTwoActivity" />
          <activity android:name="com.example.mobilesavety.activity.SetupThreeActivity" />
          <activity android:name="com.example.mobilesavety.activity.SetupFourActivity" />
+         <activity android:name="com.example.mobilesavety.activity.ContactListActivity" />
     </application>
 
 </manifest>
