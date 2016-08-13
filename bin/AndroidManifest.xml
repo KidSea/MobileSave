@@ -3,6 +3,7 @@
     package="com.example.mobilesavety"
     android:versionCode="1"
     android:versionName="1.0" >
+
     <!-- android:versionCode 本地应用版本号1,版本号是2,有必要提示用户更新 -->
     <!--
          android:versionName="1.0"  
@@ -14,7 +15,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
-    
+
     <!-- android:theme="@android:style/Theme.Light.NoTitleBar" -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -55,6 +56,7 @@
     <!-- 以下为可选权限 -->
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -76,13 +78,30 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-         <activity android:name="com.example.mobilesavety.activity.SettingActivity" />
-         <activity android:name="com.example.mobilesavety.activity.SetupOverActivity" />
-         <activity android:name="com.example.mobilesavety.activity.SetupOneActivity" />
-         <activity android:name="com.example.mobilesavety.activity.SetupTwoActivity" />
-         <activity android:name="com.example.mobilesavety.activity.SetupThreeActivity" />
-         <activity android:name="com.example.mobilesavety.activity.SetupFourActivity" />
-         <activity android:name="com.example.mobilesavety.activity.ContactListActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SettingActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SetupOverActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SetupOneActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SetupTwoActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SetupThreeActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SetupFourActivity" />
+        <activity android:name="com.example.mobilesavety.activity.ContactListActivity" />
+        <activity android:name="com.example.mobilesavety.activity.AToolActivity" />
+        <activity android:name="com.example.mobilesavety.activity.QueryAddressActivity" />
+
+        <receiver android:name="com.example.mobilesavety.receiver.BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.example.mobilesavety.receiver.SmsReceiver" >
+            <intent-filter>
+
+                <!-- 为了去关联系统短信的广播对应过滤条件,先将编译版本改为4.1.2 -->
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.example.mobilesavety.service.LocationService" />
     </application>
 
 </manifest>

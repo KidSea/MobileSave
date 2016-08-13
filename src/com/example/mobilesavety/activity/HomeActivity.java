@@ -146,10 +146,12 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 			// 展示对话框
 			showDialog();
 			break;
+		case 7:
+			
+			startActivity(new Intent(getApplicationContext(),AToolActivity.class));
+			break;
 		case 8:
-			Intent intent = new Intent(this, SettingActivity.class);
-			startActivity(intent);
-
+			startActivity(new Intent(getApplicationContext(),SettingActivity.class));
 			break;
 		default:
 			break;
