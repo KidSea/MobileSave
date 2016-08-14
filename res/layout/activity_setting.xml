@@ -17,7 +17,8 @@
         mobilesavety:deson="自动更新已开启"
         mobilesavety:destitle="自动更新设置" >
     </com.example.mobilesavety.view.SettingItemView>
-       <com.example.mobilesavety.view.SettingItemView
+
+    <com.example.mobilesavety.view.SettingItemView
         xmlns:mobilesavety="http://schemas.android.com/apk/res/com.example.mobilesavety"
         android:id="@+id/siv_address"
         android:layout_width="match_parent"
@@ -25,6 +26,38 @@
         mobilesavety:desoff="电话归属地显示关闭"
         mobilesavety:deson="电话归属地显示开启"
         mobilesavety:destitle="电话归属地显示设置" >
+    </com.example.mobilesavety.view.SettingItemView>
+
+    <com.example.mobilesavety.view.SettingClickView
+        android:id="@+id/scv_toast_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.example.mobilesavety.view.SettingClickView>
+
+    <com.example.mobilesavety.view.SettingClickView
+        android:id="@+id/scv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.example.mobilesavety.view.SettingClickView>
+
+    <com.example.mobilesavety.view.SettingItemView
+        xmlns:mobilesavety="http://schemas.android.com/apk/res/com.example.mobilesavety"
+        android:id="@+id/siv_blacknumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesavety:desoff="黑名单拦截已开启"
+        mobilesavety:deson="黑名单拦截已关闭"
+        mobilesavety:destitle="黑名单拦截设置" >
+    </com.example.mobilesavety.view.SettingItemView>
+
+    <com.example.mobilesavety.view.SettingItemView
+        xmlns:mobilesavety="http://schemas.android.com/apk/res/com.example.mobilesavety"
+         android:id="@+id/siv_app_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesavety:desoff="程序锁已关闭"
+        mobilesavety:deson="程序锁已开启"
+        mobilesavety:destitle="程序锁设置" >
     </com.example.mobilesavety.view.SettingItemView>
 
 </LinearLayout>

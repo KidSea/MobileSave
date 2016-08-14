@@ -18,7 +18,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+/**
+ * ≤È—ØπÈ Ùµÿ
+ * @author yuxuehai
+ *
+ */
 public class QueryAddressActivity extends Activity {
 	private EditText et_phone;
 	private Button bt_query;

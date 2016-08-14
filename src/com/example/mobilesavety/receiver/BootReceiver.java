@@ -12,7 +12,11 @@ import android.content.Intent;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-
+/**
+ * SIM¿¨¼àÌý¹ã²¥
+ * @author yuxuehai
+ *
+ */
 public class BootReceiver extends BroadcastReceiver {
 	private static final String tag = "BootReceiver";
 	@Override

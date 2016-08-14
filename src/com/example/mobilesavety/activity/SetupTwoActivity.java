@@ -14,7 +14,11 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-
+/**
+ * 设置向导第二部
+ * @author yuxuehai
+ *
+ */
 public class SetupTwoActivity extends BaseSetupActivity{
 
 	private SettingItemView siv_sim_bound;

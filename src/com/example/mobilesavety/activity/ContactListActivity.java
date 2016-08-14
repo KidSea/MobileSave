@@ -21,7 +21,11 @@ import android.widget.BaseAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-
+/**
+ * 联系人列表
+ * @author yuxuehai
+ *
+ */
 public class ContactListActivity extends Activity {
 	protected static final String tag = "ContactListActivity";
 	

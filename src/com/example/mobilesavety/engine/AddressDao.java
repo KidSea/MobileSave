@@ -3,7 +3,11 @@ package com.example.mobilesavety.engine;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
+/**
+ * 归属地数据库操作引擎
+ * @author yuxuehai
+ *
+ */
 public class AddressDao {
 	private static final String tag = "AddressDao";
 	//1,指定访问数据库的路径

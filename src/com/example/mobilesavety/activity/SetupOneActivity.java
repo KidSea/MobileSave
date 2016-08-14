@@ -6,7 +6,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
+/**
+ * 设置向导第一步
+ * @author yuxuehai
+ *
+ */
 public class SetupOneActivity extends BaseSetupActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -11,7 +11,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.telephony.SmsManager;
-
+/**
+ * Î»ÖÃ·þÎñ
+ * @author yuxuehai
+ *
+ */
 public class LocationService extends Service {
 	
 	@Override

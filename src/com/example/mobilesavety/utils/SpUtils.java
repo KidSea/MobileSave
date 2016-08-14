@@ -1,10 +1,11 @@
 package com.example.mobilesavety.utils;
-/**
- * 缓存工具SP
- */
+
 import android.content.Context;
 import android.content.SharedPreferences;
-
+/**
+ * 缓存工具SP
+ * @author yuxuehai
+ */
 public class SpUtils {
 
 	private static SharedPreferences sp;

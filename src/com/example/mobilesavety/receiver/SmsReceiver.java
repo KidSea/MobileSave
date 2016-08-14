@@ -12,7 +12,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.telephony.SmsMessage;
-
+/**
+ * ¶ÌÐÅ¼àÌý¹ã²¥
+ * @author yuxuehai
+ *
+ */
 public class SmsReceiver extends BroadcastReceiver {
 
 	@Override

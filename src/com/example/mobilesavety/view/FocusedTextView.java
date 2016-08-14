@@ -3,7 +3,11 @@ package com.example.mobilesavety.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
+/**
+ * 重写Textview的自定义控件
+ * @author yuxuehai
+ *
+ */
 public class FocusedTextView extends TextView {
 
 	public FocusedTextView(Context context, AttributeSet attrs, int defStyle) {

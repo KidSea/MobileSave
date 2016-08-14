@@ -2,7 +2,11 @@ package com.example.mobilesavety.utils;
 
 import android.content.Context;
 import android.widget.Toast;
-
+/**
+ * 吐司工具
+ * @author yuxuehai
+ *
+ */
 public class ToastUtil {
 	/**
 	 * @param ctx	上下文环境

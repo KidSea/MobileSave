@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-
+/**
+ * 创建引导基类
+ * @author yuxuehai
+ *
+ */
 public abstract class BaseSetupActivity extends Activity {
 	private GestureDetector gestureDetector;
 

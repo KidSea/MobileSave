@@ -34,7 +34,11 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+/**
+ * 主页面
+ * @author yuxuehai
+ *
+ */
 public class HomeActivity extends Activity implements OnItemClickListener {
 
 	private GridView mGridView;
@@ -146,11 +150,16 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 			// 展示对话框
 			showDialog();
 			break;
+		case 1:
+			//跳转到黑名单拦截界面
+			startActivity(new Intent(getApplicationContext(),BlackNumberActivity.class));
+			break;
 		case 7:
-			
+			//跳转到高级工具界面
 			startActivity(new Intent(getApplicationContext(),AToolActivity.class));
 			break;
 		case 8:
+			//跳转到设置界面
 			startActivity(new Intent(getApplicationContext(),SettingActivity.class));
 			break;
 		default:

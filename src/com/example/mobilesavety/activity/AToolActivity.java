@@ -1,5 +1,4 @@
 package com.example.mobilesavety.activity;
-
 import com.example.mobilesavety.R;
 
 import android.app.Activity;
@@ -9,7 +8,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+/**、
+ * 系统高级工具界面
+ * @author yuxuehai
+ *
+ */
 public class AToolActivity extends Activity {
 	private TextView tv_query_phone_address, tv_sms_backup;
 	private ProgressBar pb_bar;

@@ -2,7 +2,11 @@ package com.example.mobilesavety.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
+/**
+ * MD5加密工具
+ * @author yuxuehai
+ *
+ */
 public class Md5Util {
 	/**
 	 * 给指定字符串按照md5算法去加密

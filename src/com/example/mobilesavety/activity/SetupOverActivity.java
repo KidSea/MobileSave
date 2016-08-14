@@ -12,7 +12,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-
+/**
+ * 设置向导结束页面
+ * @author yuxuehai
+ *
+ */
 public class SetupOverActivity extends Activity {
 	private TextView tv_phone;
 	private TextView tv_reset;

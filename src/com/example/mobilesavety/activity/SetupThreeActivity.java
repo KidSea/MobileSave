@@ -13,7 +13,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-
+/**
+ * 设置向导第三步
+ * @author yuxuehai
+ *
+ */
 public class SetupThreeActivity extends BaseSetupActivity {
 	private EditText et_phone_number;
 	private Button bt_select_number;

@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+/**
+ * 设置条目点击自定义布局
+ * @author yuxuehai
+ *
+ */
 public class SettingItemView extends RelativeLayout {
 	private static final String NAMESPACE = "http://schemas.android.com/apk/res/com.example.mobilesavety";
 	private static final String tag = "SettingItemView";

@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 
 
-
+/**
+ * 设置点击条目自定义布局
+ * @author yuxuehai
+ *
+ */
 public class SettingClickView extends RelativeLayout {
 	private TextView tv_des;
 	private TextView tv_title;

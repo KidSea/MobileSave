@@ -1,5 +1,9 @@
 package com.example.mobilesavety.utils;
-
+/**
+ * 键值处理页面
+ * @author yuxuehai
+ *
+ */
 public class ConstantValue {
 	/**
 	 * 是否开启更新的key
