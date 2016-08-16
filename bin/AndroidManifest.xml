@@ -88,7 +88,10 @@
         <activity android:name="com.example.mobilesavety.activity.AToolActivity" />
         <activity android:name="com.example.mobilesavety.activity.QueryAddressActivity" />
         <activity android:name="com.example.mobilesavety.activity.BlackNumberActivity" />
-        <activity android:name="com.example.mobilesavety.activity.CommonNumberQueryActivity" />
+        <activity android:name="com.example.mobilesavety.activity.CommonNumberQueryActivity"/>
+        <activity android:name="com.example.mobilesavety.activity.AppManagerActivity" />
+        <activity android:name="com.example.mobilesavety.activity.ProcessManagerActivity"/>
+        <activity android:name="com.example.mobilesavety.activity.ProcessSettingActivity"/>
         
         <activity
             android:name="com.example.mobilesavety.activity.ToastLocationActivity"
@@ -110,6 +113,7 @@
         <service android:name="com.example.mobilesavety.service.LocationService" />
         <service android:name="com.example.mobilesavety.service.AddressService" />
         <service android:name="com.example.mobilesavety.service.BlackNumberService" />
+        <service android:name="com.example.mobilesavety.service.LockScreenService" />
     </application>
 
 </manifest>

@@ -154,6 +154,14 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 			//跳转到黑名单拦截界面
 			startActivity(new Intent(getApplicationContext(),BlackNumberActivity.class));
 			break;
+		case 2:
+			//跳转到软件管理界面
+			startActivity(new Intent(getApplicationContext(),AppManagerActivity.class));
+			break;
+		case 3:
+			//跳转到进程管理界面
+			startActivity(new Intent(getApplicationContext(),ProcessManagerActivity.class));
+			break;
 		case 7:
 			//跳转到高级工具界面
 			startActivity(new Intent(getApplicationContext(),AToolActivity.class));
