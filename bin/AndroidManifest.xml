@@ -88,11 +88,17 @@
         <activity android:name="com.example.mobilesavety.activity.AToolActivity" />
         <activity android:name="com.example.mobilesavety.activity.QueryAddressActivity" />
         <activity android:name="com.example.mobilesavety.activity.BlackNumberActivity" />
-        <activity android:name="com.example.mobilesavety.activity.CommonNumberQueryActivity"/>
+        <activity android:name="com.example.mobilesavety.activity.CommonNumberQueryActivity" />
         <activity android:name="com.example.mobilesavety.activity.AppManagerActivity" />
-        <activity android:name="com.example.mobilesavety.activity.ProcessManagerActivity"/>
-        <activity android:name="com.example.mobilesavety.activity.ProcessSettingActivity"/>
-        
+        <activity android:name="com.example.mobilesavety.activity.ProcessManagerActivity" />
+        <activity android:name="com.example.mobilesavety.activity.ProcessSettingActivity" />
+        <activity android:name="com.example.mobilesavety.activity.AppLockActivity" />
+        <!-- 拦截界面要在一个单独的任务栈中 -->
+        <!-- 不需要去显示手机卫士的图标,true不要显示最近的图标,false显示最近开启应用的图标 -->
+        <activity
+            android:name="com.example.mobilesavety.activity.EnterPsdActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.example.mobilesavety.activity.ToastLocationActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
@@ -102,6 +108,13 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        <receiver android:name="com.example.mobilesavety.receiver.KillProcessReceiver" >
+            <intent-filter>
+
+                <!-- 为了去关联系统短信的广播对应过滤条件,先将编译版本改为4.1.2 -->
+                <action android:name="android.intent.action.KILL_BACKGROUND_PROCESS" />
+            </intent-filter>
+        </receiver>
         <receiver android:name="com.example.mobilesavety.receiver.SmsReceiver" >
             <intent-filter>
 
@@ -109,11 +122,22 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+        <receiver android:name="com.example.mobilesavety.receiver.MyAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/process_widget_provider" />
+        </receiver>
 
         <service android:name="com.example.mobilesavety.service.LocationService" />
         <service android:name="com.example.mobilesavety.service.AddressService" />
         <service android:name="com.example.mobilesavety.service.BlackNumberService" />
         <service android:name="com.example.mobilesavety.service.LockScreenService" />
+        <service android:name="com.example.mobilesavety.service.UpdateWidgetService" />
+        <service android:name="com.example.mobilesavety.service.WatchDogService" />
     </application>
 
 </manifest>

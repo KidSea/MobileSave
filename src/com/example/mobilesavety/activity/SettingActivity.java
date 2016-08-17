@@ -3,11 +3,13 @@ package com.example.mobilesavety.activity;
 import com.example.mobilesavety.R;
 import com.example.mobilesavety.service.AddressService;
 import com.example.mobilesavety.service.BlackNumberService;
+import com.example.mobilesavety.service.WatchDogService;
 import com.example.mobilesavety.utils.ConstantValue;
 import com.example.mobilesavety.utils.ServiceUtils;
 import com.example.mobilesavety.utils.SpUtils;
 import com.example.mobilesavety.view.SettingClickView;
 import com.example.mobilesavety.view.SettingItemView;
+
 
 
 
@@ -44,6 +46,31 @@ public class SettingActivity extends Activity {
 		initToastStyle();
 		initLocation();
 		initBlacknumber();
+		initAppLock();
+	}
+	/**
+	 * 程序锁
+	 */
+	private void initAppLock() {
+		// TODO Auto-generated method stub
+		final SettingItemView siv_app_lock = (SettingItemView) findViewById(R.id.siv_app_lock);
+		boolean isRunning = ServiceUtils.isRunning(this, "com.example.mobilesavety.service.WatchDogService");
+		siv_app_lock.setCheck(isRunning);
+		
+		siv_app_lock.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				boolean isCheck = siv_app_lock.isCheck();
+				siv_app_lock.setCheck(!isCheck);
+				if(!isCheck){
+					//开启服务
+					startService(new Intent(getApplicationContext(), WatchDogService.class));
+				}else{
+					//关闭服务
+					stopService(new Intent(getApplicationContext(), WatchDogService.class));
+				}
+			}
+		});
 	}
 	/**
 	 * 黑名单拦截

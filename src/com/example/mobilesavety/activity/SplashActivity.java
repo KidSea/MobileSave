@@ -4,13 +4,15 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
+  
 import org.json.JSONObject;
 
 import com.example.mobilesavety.R;
 import com.example.mobilesavety.utils.ConstantValue;
 import com.example.mobilesavety.utils.PackageUtils;
 import com.example.mobilesavety.utils.SpUtils;
+
+
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -25,6 +27,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -83,6 +86,34 @@ public class SplashActivity extends Activity {
 		
         //初始化数据库
         initDB();
+        
+        if(!SpUtils.getBoolean(this, ConstantValue.HAS_SHORTCUT, false)){
+        	//生成快捷方式
+            initShortCut();
+        }
+	}
+	/**
+	 * 生成快捷方式
+	 */
+	private void initShortCut() {
+		// TODO Auto-generated method stub
+		//1,给intent维护图标,名称
+		Intent intent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
+		//维护图标
+		intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, 
+				BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		//名称
+		intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "黑马卫士");
+		//2,点击快捷方式后跳转到的activity
+		//2.1维护开启的意图对象
+		Intent shortCutIntent = new Intent("android.intent.action.HOME");
+		shortCutIntent.addCategory("android.intent.category.DEFAULT");
+		
+		intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortCutIntent);
+		//3,发送广播
+		sendBroadcast(intent);
+		//4,告知sp已经生成快捷方式
+		SpUtils.putBoolean(this, ConstantValue.HAS_SHORTCUT, true);
 	}
 
 	private void initDB() {
