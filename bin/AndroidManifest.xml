@@ -93,6 +93,13 @@
         <activity android:name="com.example.mobilesavety.activity.ProcessManagerActivity" />
         <activity android:name="com.example.mobilesavety.activity.ProcessSettingActivity" />
         <activity android:name="com.example.mobilesavety.activity.AppLockActivity" />
+        <activity android:name="com.example.mobilesavety.activity.AnitVirusActivity" />
+        <activity android:name="com.example.mobilesavety.activity.TrafficActivity" />
+        <activity android:name="com.example.mobilesavety.activity.BaseCacheClearActivity" />
+        <activity android:name="com.example.mobilesavety.activity.SDCacheClearActivity" />
+        <activity android:name="com.example.mobilesavety.activity.CacheClearActivity" >
+        </activity>
+
         <!-- 拦截界面要在一个单独的任务栈中 -->
         <!-- 不需要去显示手机卫士的图标,true不要显示最近的图标,false显示最近开启应用的图标 -->
         <activity

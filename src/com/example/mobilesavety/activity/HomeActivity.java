@@ -13,6 +13,7 @@ import com.example.mobilesavety.utils.ToastUtil;
 
 
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -161,6 +162,18 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 		case 3:
 			//跳转到进程管理界面
 			startActivity(new Intent(getApplicationContext(),ProcessManagerActivity.class));
+			break;
+		case 4:
+			//跳转到流量监控界面
+			startActivity(new Intent(getApplicationContext(),TrafficActivity.class));
+			break;
+		case 5:
+			//跳转到手机杀毒界面
+			startActivity(new Intent(getApplicationContext(),AnitVirusActivity.class));
+			break;
+		case 6:
+			//跳转到进程清理界面
+			startActivity(new Intent(getApplicationContext(),BaseCacheClearActivity.class));
 			break;
 		case 7:
 			//跳转到高级工具界面
